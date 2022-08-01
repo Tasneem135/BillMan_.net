@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BManModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="buildings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="buildingCode" Type="int" Nullable="false" />
+    <Property Name="buildingName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="totalFloors" Type="int" Nullable="false" />
+    <Property Name="totalFlats" Type="int" Nullable="false" />
+    <Property Name="ownerName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="colonyCode" Type="int" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="colonys">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="colonyCode" Type="int" Nullable="false" />
+    <Property Name="colonyName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="buildingCode" Type="int" Nullable="false" />
+    <Property Name="buildingName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="currentBills">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="buildingCode" Type="int" Nullable="false" />
+    <Property Name="flatNumber" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="datestart" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="dateend" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="unitAmount" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="totalAmount" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="employees">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="empId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="joinDate" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="resignDate" Type="varchar" MaxLength="50" />
+    <Property Name="salary" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mobile" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usertype" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="flatNumbers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="flatSize" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="flatNumber" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="rentStatus" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="buildingCode" Type="int" Nullable="false" />
+    <Property Name="flatRenterName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="mobile" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="flatRents">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="buildingCode" Type="int" Nullable="false" />
+    <Property Name="flatNumber" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="datestart" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="dateend" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="unitAmount" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="totalAmount" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="flats">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="colonyCode" Type="int" Nullable="false" />
+    <Property Name="buildingCode" Type="int" Nullable="false" />
+    <Property Name="buildingName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="floorDetail" Type="int" Nullable="false" />
+    <Property Name="flatNumber" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="flatSize" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="flatRenterName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="month" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="flatRent" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="wasaBill" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="currentBill" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="colonyId" Type="int" Nullable="false" />
+    <Property Name="buildingId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="logins">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usertype" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="subscriptions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="paymentstatus" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DOP" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="subUsers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="colonyCode" Type="int" Nullable="false" />
+    <Property Name="buildingCode" Type="int" Nullable="false" />
+    <Property Name="flatNumber" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mobile" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usertype" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="mobileNumber" Type="varchar" MaxLength="50" />
+    <Property Name="address" Type="text" Nullable="false" />
+    <Property Name="division" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usertype" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wasaBills">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="buildingCode" Type="int" Nullable="false" />
+    <Property Name="flatNumber" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="datestart" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="dateend" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="unitAmount" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="totalAmount" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="BManModelStoreContainer">
+    <EntitySet Name="buildings" EntityType="Self.buildings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="colonys" EntityType="Self.colonys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="currentBills" EntityType="Self.currentBills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="employees" EntityType="Self.employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="flatNumbers" EntityType="Self.flatNumbers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="flatRents" EntityType="Self.flatRents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="flats" EntityType="Self.flats" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="logins" EntityType="Self.logins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="subscriptions" EntityType="Self.subscriptions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="subUsers" EntityType="Self.subUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wasaBills" EntityType="Self.wasaBills" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

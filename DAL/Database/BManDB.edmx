@@ -1,0 +1,538 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BManModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="buildings">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="buildingCode" Type="int" Nullable="false" />
+          <Property Name="buildingName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="totalFloors" Type="int" Nullable="false" />
+          <Property Name="totalFlats" Type="int" Nullable="false" />
+          <Property Name="ownerName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="colonyCode" Type="int" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="colonys">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="colonyCode" Type="int" Nullable="false" />
+          <Property Name="colonyName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="buildingCode" Type="int" Nullable="false" />
+          <Property Name="buildingName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="currentBills">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="buildingCode" Type="int" Nullable="false" />
+          <Property Name="flatNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="datestart" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="dateend" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="unitAmount" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="totalAmount" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="employees">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="empId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="joinDate" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="resignDate" Type="varchar" MaxLength="50" />
+          <Property Name="salary" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="mobile" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="usertype" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="flatNumbers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="flatSize" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="flatNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="rentStatus" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="buildingCode" Type="int" Nullable="false" />
+          <Property Name="flatRenterName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="mobile" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="flatRents">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="buildingCode" Type="int" Nullable="false" />
+          <Property Name="flatNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="datestart" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="dateend" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="unitAmount" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="totalAmount" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="flats">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="colonyCode" Type="int" Nullable="false" />
+          <Property Name="buildingCode" Type="int" Nullable="false" />
+          <Property Name="buildingName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="floorDetail" Type="int" Nullable="false" />
+          <Property Name="flatNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="flatSize" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="flatRenterName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="month" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="flatRent" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="wasaBill" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="currentBill" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="colonyId" Type="int" Nullable="false" />
+          <Property Name="buildingId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="logins">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="usertype" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="subscriptions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="paymentstatus" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DOP" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="subUsers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="colonyCode" Type="int" Nullable="false" />
+          <Property Name="buildingCode" Type="int" Nullable="false" />
+          <Property Name="flatNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="mobile" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="usertype" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="mobileNumber" Type="varchar" MaxLength="50" />
+          <Property Name="address" Type="text" Nullable="false" />
+          <Property Name="division" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="usertype" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="wasaBills">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="buildingCode" Type="int" Nullable="false" />
+          <Property Name="flatNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="datestart" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="dateend" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="unitAmount" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="totalAmount" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="BManModelStoreContainer">
+          <EntitySet Name="buildings" EntityType="Self.buildings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="colonys" EntityType="Self.colonys" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="currentBills" EntityType="Self.currentBills" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="employees" EntityType="Self.employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="flatNumbers" EntityType="Self.flatNumbers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="flatRents" EntityType="Self.flatRents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="flats" EntityType="Self.flats" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="logins" EntityType="Self.logins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="subscriptions" EntityType="Self.subscriptions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="subUsers" EntityType="Self.subUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="wasaBills" EntityType="Self.wasaBills" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BManModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="building">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="buildingCode" Type="Int32" Nullable="false" />
+          <Property Name="buildingName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="totalFloors" Type="Int32" Nullable="false" />
+          <Property Name="totalFlats" Type="Int32" Nullable="false" />
+          <Property Name="ownerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="colonyCode" Type="Int32" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="colony">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="colonyCode" Type="Int32" Nullable="false" />
+          <Property Name="colonyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="buildingCode" Type="Int32" Nullable="false" />
+          <Property Name="buildingName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="currentBill">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="buildingCode" Type="Int32" Nullable="false" />
+          <Property Name="flatNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="datestart" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dateend" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="unitAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="totalAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="empId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="joinDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="resignDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="salary" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usertype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="flatNumber">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="flatSize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="flatNumber1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="buildingCode" Type="Int32" Nullable="false" />
+          <Property Name="flatRenterName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="flatRent">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="buildingCode" Type="Int32" Nullable="false" />
+          <Property Name="flatNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="datestart" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dateend" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="unitAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="totalAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="flat">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="colonyCode" Type="Int32" Nullable="false" />
+          <Property Name="buildingCode" Type="Int32" Nullable="false" />
+          <Property Name="buildingName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="floorDetail" Type="Int32" Nullable="false" />
+          <Property Name="flatNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="flatSize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="flatRenterName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="month" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="flatRent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="wasaBill" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="currentBill" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="colonyId" Type="Int32" Nullable="false" />
+          <Property Name="buildingId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usertype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="subscription">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="paymentstatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DOP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="subUser">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="colonyCode" Type="Int32" Nullable="false" />
+          <Property Name="buildingCode" Type="Int32" Nullable="false" />
+          <Property Name="flatNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usertype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mobileNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="division" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usertype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="wasaBill">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="buildingCode" Type="Int32" Nullable="false" />
+          <Property Name="flatNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="datestart" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dateend" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="unitAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="totalAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityContainer Name="BManEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="buildings" EntityType="Self.building" />
+          <EntitySet Name="colonys" EntityType="Self.colony" />
+          <EntitySet Name="currentBills" EntityType="Self.currentBill" />
+          <EntitySet Name="employees" EntityType="Self.employee" />
+          <EntitySet Name="flatNumbers" EntityType="Self.flatNumber" />
+          <EntitySet Name="flatRents" EntityType="Self.flatRent" />
+          <EntitySet Name="flats" EntityType="Self.flat" />
+          <EntitySet Name="logins" EntityType="Self.login" />
+          <EntitySet Name="subscriptions" EntityType="Self.subscription" />
+          <EntitySet Name="subUsers" EntityType="Self.subUser" />
+          <EntitySet Name="users" EntityType="Self.user" />
+          <EntitySet Name="wasaBills" EntityType="Self.wasaBill" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BManModelStoreContainer" CdmEntityContainer="BManEntities">
+          <EntitySetMapping Name="buildings">
+            <EntityTypeMapping TypeName="BManModel.building">
+              <MappingFragment StoreEntitySet="buildings">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="buildingCode" ColumnName="buildingCode" />
+                <ScalarProperty Name="buildingName" ColumnName="buildingName" />
+                <ScalarProperty Name="totalFloors" ColumnName="totalFloors" />
+                <ScalarProperty Name="totalFlats" ColumnName="totalFlats" />
+                <ScalarProperty Name="ownerName" ColumnName="ownerName" />
+                <ScalarProperty Name="colonyCode" ColumnName="colonyCode" />
+                <ScalarProperty Name="username" ColumnName="username" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="colonys">
+            <EntityTypeMapping TypeName="BManModel.colony">
+              <MappingFragment StoreEntitySet="colonys">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="colonyCode" ColumnName="colonyCode" />
+                <ScalarProperty Name="colonyName" ColumnName="colonyName" />
+                <ScalarProperty Name="buildingCode" ColumnName="buildingCode" />
+                <ScalarProperty Name="buildingName" ColumnName="buildingName" />
+                <ScalarProperty Name="username" ColumnName="username" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="currentBills">
+            <EntityTypeMapping TypeName="BManModel.currentBill">
+              <MappingFragment StoreEntitySet="currentBills">
+                <ScalarProperty Name="buildingCode" ColumnName="buildingCode" />
+                <ScalarProperty Name="flatNumber" ColumnName="flatNumber" />
+                <ScalarProperty Name="datestart" ColumnName="datestart" />
+                <ScalarProperty Name="dateend" ColumnName="dateend" />
+                <ScalarProperty Name="unitAmount" ColumnName="unitAmount" />
+                <ScalarProperty Name="totalAmount" ColumnName="totalAmount" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="employees">
+            <EntityTypeMapping TypeName="BManModel.employee">
+              <MappingFragment StoreEntitySet="employees">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="empId" ColumnName="empId" />
+                <ScalarProperty Name="joinDate" ColumnName="joinDate" />
+                <ScalarProperty Name="resignDate" ColumnName="resignDate" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="usertype" ColumnName="usertype" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="flatNumbers">
+            <EntityTypeMapping TypeName="BManModel.flatNumber">
+              <MappingFragment StoreEntitySet="flatNumbers">
+                <ScalarProperty Name="flatSize" ColumnName="flatSize" />
+                <ScalarProperty Name="flatNumber1" ColumnName="flatNumber" />
+                <ScalarProperty Name="rentStatus" ColumnName="rentStatus" />
+                <ScalarProperty Name="buildingCode" ColumnName="buildingCode" />
+                <ScalarProperty Name="flatRenterName" ColumnName="flatRenterName" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="flatRents">
+            <EntityTypeMapping TypeName="BManModel.flatRent">
+              <MappingFragment StoreEntitySet="flatRents">
+                <ScalarProperty Name="buildingCode" ColumnName="buildingCode" />
+                <ScalarProperty Name="flatNumber" ColumnName="flatNumber" />
+                <ScalarProperty Name="datestart" ColumnName="datestart" />
+                <ScalarProperty Name="dateend" ColumnName="dateend" />
+                <ScalarProperty Name="unitAmount" ColumnName="unitAmount" />
+                <ScalarProperty Name="totalAmount" ColumnName="totalAmount" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="flats">
+            <EntityTypeMapping TypeName="BManModel.flat">
+              <MappingFragment StoreEntitySet="flats">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="colonyCode" ColumnName="colonyCode" />
+                <ScalarProperty Name="buildingCode" ColumnName="buildingCode" />
+                <ScalarProperty Name="buildingName" ColumnName="buildingName" />
+                <ScalarProperty Name="floorDetail" ColumnName="floorDetail" />
+                <ScalarProperty Name="flatNumber" ColumnName="flatNumber" />
+                <ScalarProperty Name="flatSize" ColumnName="flatSize" />
+                <ScalarProperty Name="flatRenterName" ColumnName="flatRenterName" />
+                <ScalarProperty Name="month" ColumnName="month" />
+                <ScalarProperty Name="flatRent" ColumnName="flatRent" />
+                <ScalarProperty Name="wasaBill" ColumnName="wasaBill" />
+                <ScalarProperty Name="currentBill" ColumnName="currentBill" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="colonyId" ColumnName="colonyId" />
+                <ScalarProperty Name="buildingId" ColumnName="buildingId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="logins">
+            <EntityTypeMapping TypeName="BManModel.login">
+              <MappingFragment StoreEntitySet="logins">
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="usertype" ColumnName="usertype" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subscriptions">
+            <EntityTypeMapping TypeName="BManModel.subscription">
+              <MappingFragment StoreEntitySet="subscriptions">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="paymentstatus" ColumnName="paymentstatus" />
+                <ScalarProperty Name="DOP" ColumnName="DOP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subUsers">
+            <EntityTypeMapping TypeName="BManModel.subUser">
+              <MappingFragment StoreEntitySet="subUsers">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="colonyCode" ColumnName="colonyCode" />
+                <ScalarProperty Name="buildingCode" ColumnName="buildingCode" />
+                <ScalarProperty Name="flatNumber" ColumnName="flatNumber" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="usertype" ColumnName="usertype" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="BManModel.user">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="mobileNumber" ColumnName="mobileNumber" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="division" ColumnName="division" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="usertype" ColumnName="usertype" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="wasaBills">
+            <EntityTypeMapping TypeName="BManModel.wasaBill">
+              <MappingFragment StoreEntitySet="wasaBills">
+                <ScalarProperty Name="buildingCode" ColumnName="buildingCode" />
+                <ScalarProperty Name="flatNumber" ColumnName="flatNumber" />
+                <ScalarProperty Name="datestart" ColumnName="datestart" />
+                <ScalarProperty Name="dateend" ColumnName="dateend" />
+                <ScalarProperty Name="unitAmount" ColumnName="unitAmount" />
+                <ScalarProperty Name="totalAmount" ColumnName="totalAmount" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BManModelStoreContainer" CdmEntityContainer="BManEntities">
+    <EntitySetMapping Name="buildings">
+      <EntityTypeMapping TypeName="BManModel.building">
+        <MappingFragment StoreEntitySet="buildings">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="buildingCode" ColumnName="buildingCode" />
+          <ScalarProperty Name="buildingName" ColumnName="buildingName" />
+          <ScalarProperty Name="totalFloors" ColumnName="totalFloors" />
+          <ScalarProperty Name="totalFlats" ColumnName="totalFlats" />
+          <ScalarProperty Name="ownerName" ColumnName="ownerName" />
+          <ScalarProperty Name="colonyCode" ColumnName="colonyCode" />
+          <ScalarProperty Name="username" ColumnName="username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="colonys">
+      <EntityTypeMapping TypeName="BManModel.colony">
+        <MappingFragment StoreEntitySet="colonys">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="colonyCode" ColumnName="colonyCode" />
+          <ScalarProperty Name="colonyName" ColumnName="colonyName" />
+          <ScalarProperty Name="buildingCode" ColumnName="buildingCode" />
+          <ScalarProperty Name="buildingName" ColumnName="buildingName" />
+          <ScalarProperty Name="username" ColumnName="username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="currentBills">
+      <EntityTypeMapping TypeName="BManModel.currentBill">
+        <MappingFragment StoreEntitySet="currentBills">
+          <ScalarProperty Name="buildingCode" ColumnName="buildingCode" />
+          <ScalarProperty Name="flatNumber" ColumnName="flatNumber" />
+          <ScalarProperty Name="datestart" ColumnName="datestart" />
+          <ScalarProperty Name="dateend" ColumnName="dateend" />
+          <ScalarProperty Name="unitAmount" ColumnName="unitAmount" />
+          <ScalarProperty Name="totalAmount" ColumnName="totalAmount" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="employees">
+      <EntityTypeMapping TypeName="BManModel.employee">
+        <MappingFragment StoreEntitySet="employees">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="empId" ColumnName="empId" />
+          <ScalarProperty Name="joinDate" ColumnName="joinDate" />
+          <ScalarProperty Name="resignDate" ColumnName="resignDate" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="usertype" ColumnName="usertype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="flatNumbers">
+      <EntityTypeMapping TypeName="BManModel.flatNumber">
+        <MappingFragment StoreEntitySet="flatNumbers">
+          <ScalarProperty Name="flatSize" ColumnName="flatSize" />
+          <ScalarProperty Name="flatNumber1" ColumnName="flatNumber" />
+          <ScalarProperty Name="rentStatus" ColumnName="rentStatus" />
+          <ScalarProperty Name="buildingCode" ColumnName="buildingCode" />
+          <ScalarProperty Name="flatRenterName" ColumnName="flatRenterName" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="flatRents">
+      <EntityTypeMapping TypeName="BManModel.flatRent">
+        <MappingFragment StoreEntitySet="flatRents">
+          <ScalarProperty Name="buildingCode" ColumnName="buildingCode" />
+          <ScalarProperty Name="flatNumber" ColumnName="flatNumber" />
+          <ScalarProperty Name="datestart" ColumnName="datestart" />
+          <ScalarProperty Name="dateend" ColumnName="dateend" />
+          <ScalarProperty Name="unitAmount" ColumnName="unitAmount" />
+          <ScalarProperty Name="totalAmount" ColumnName="totalAmount" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="flats">
+      <EntityTypeMapping TypeName="BManModel.flat">
+        <MappingFragment StoreEntitySet="flats">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="colonyCode" ColumnName="colonyCode" />
+          <ScalarProperty Name="buildingCode" ColumnName="buildingCode" />
+          <ScalarProperty Name="buildingName" ColumnName="buildingName" />
+          <ScalarProperty Name="floorDetail" ColumnName="floorDetail" />
+          <ScalarProperty Name="flatNumber" ColumnName="flatNumber" />
+          <ScalarProperty Name="flatSize" ColumnName="flatSize" />
+          <ScalarProperty Name="flatRenterName" ColumnName="flatRenterName" />
+          <ScalarProperty Name="month" ColumnName="month" />
+          <ScalarProperty Name="flatRent" ColumnName="flatRent" />
+          <ScalarProperty Name="wasaBill" ColumnName="wasaBill" />
+          <ScalarProperty Name="currentBill" ColumnName="currentBill" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="colonyId" ColumnName="colonyId" />
+          <ScalarProperty Name="buildingId" ColumnName="buildingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logins">
+      <EntityTypeMapping TypeName="BManModel.login">
+        <MappingFragment StoreEntitySet="logins">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="usertype" ColumnName="usertype" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subscriptions">
+      <EntityTypeMapping TypeName="BManModel.subscription">
+        <MappingFragment StoreEntitySet="subscriptions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="paymentstatus" ColumnName="paymentstatus" />
+          <ScalarProperty Name="DOP" ColumnName="DOP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subUsers">
+      <EntityTypeMapping TypeName="BManModel.subUser">
+        <MappingFragment StoreEntitySet="subUsers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="colonyCode" ColumnName="colonyCode" />
+          <ScalarProperty Name="buildingCode" ColumnName="buildingCode" />
+          <ScalarProperty Name="flatNumber" ColumnName="flatNumber" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="usertype" ColumnName="usertype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="BManModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="mobileNumber" ColumnName="mobileNumber" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="division" ColumnName="division" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="usertype" ColumnName="usertype" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wasaBills">
+      <EntityTypeMapping TypeName="BManModel.wasaBill">
+        <MappingFragment StoreEntitySet="wasaBills">
+          <ScalarProperty Name="buildingCode" ColumnName="buildingCode" />
+          <ScalarProperty Name="flatNumber" ColumnName="flatNumber" />
+          <ScalarProperty Name="datestart" ColumnName="datestart" />
+          <ScalarProperty Name="dateend" ColumnName="dateend" />
+          <ScalarProperty Name="unitAmount" ColumnName="unitAmount" />
+          <ScalarProperty Name="totalAmount" ColumnName="totalAmount" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

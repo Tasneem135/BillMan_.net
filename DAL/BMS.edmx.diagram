@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="09d6293e81504f249339ece552e79dfb" Name="Diagram1">
+        <EntityTypeShape EntityType="BManModel.building" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BManModel.colony" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="BManModel.flat" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="BManModel.FK_flats_buildings" ManuallyRouted="false" />
+        <AssociationConnector Association="BManModel.FK_flats_colonys" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BManModel.currentBill" Width="1.5" PointX="3" PointY="15.75" />
+        <EntityTypeShape EntityType="BManModel.flatNumber" Width="1.5" PointX="3" PointY="12.25" />
+        <EntityTypeShape EntityType="BManModel.flatRent" Width="1.5" PointX="3" PointY="8.5" />
+        <EntityTypeShape EntityType="BManModel.wasaBill" Width="1.5" PointX="3" PointY="19.375" />
+        <AssociationConnector Association="BManModel.FK_currentBills_buildings" />
+        <AssociationConnector Association="BManModel.FK_flatNumbers_buildings" />
+        <AssociationConnector Association="BManModel.FK_flatRents_buildings" />
+        <AssociationConnector Association="BManModel.FK_wasaBills_buildings" />
+        <EntityTypeShape EntityType="BManModel.employee" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BManModel.login" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BManModel.subcription" Width="1.5" PointX="5.375" PointY="7.75" />
+        <EntityTypeShape EntityType="BManModel.subUser" Width="1.5" PointX="6" PointY="4.375" />
+        <EntityTypeShape EntityType="BManModel.user" Width="1.5" PointX="7.375" PointY="7.75" />
+        <AssociationConnector Association="BManModel.FK_subUsers_buildings" />
+        <AssociationConnector Association="BManModel.FK_subUsers_colonys" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

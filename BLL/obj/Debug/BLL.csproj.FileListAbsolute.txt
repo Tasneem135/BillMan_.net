@@ -1,0 +1,16 @@
+C:\Users\Windows\source\repos\dot net\BillMan\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\Windows\source\repos\dot net\BillMan\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Windows\source\repos\dot net\BillMan\BLL\bin\Debug\BLL.dll
+C:\Users\Windows\source\repos\dot net\BillMan\BLL\bin\Debug\BLL.pdb
+C:\Users\Windows\source\repos\dot net\BillMan\BLL\bin\Debug\AutoMapper.dll
+C:\Users\Windows\source\repos\dot net\BillMan\BLL\bin\Debug\BEL.dll
+C:\Users\Windows\source\repos\dot net\BillMan\BLL\bin\Debug\DAL.dll
+C:\Users\Windows\source\repos\dot net\BillMan\BLL\bin\Debug\EntityFramework.dll
+C:\Users\Windows\source\repos\dot net\BillMan\BLL\bin\Debug\BEL.pdb
+C:\Users\Windows\source\repos\dot net\BillMan\BLL\bin\Debug\DAL.pdb
+C:\Users\Windows\source\repos\dot net\BillMan\BLL\bin\Debug\DAL.dll.config
+C:\Users\Windows\source\repos\dot net\BillMan\BLL\bin\Debug\AutoMapper.xml
+C:\Users\Windows\source\repos\dot net\BillMan\BLL\bin\Debug\EntityFramework.xml
+C:\Users\Windows\source\repos\dot net\BillMan\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\Windows\source\repos\dot net\BillMan\BLL\obj\Debug\BLL.dll
+C:\Users\Windows\source\repos\dot net\BillMan\BLL\obj\Debug\BLL.pdb
